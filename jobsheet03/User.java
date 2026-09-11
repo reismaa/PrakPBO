@@ -1,7 +1,17 @@
 package jobsheet03;
 
 public class User {
-    public String username;
+    private String username;
+    
+    private User() {
+        username = "Admin";
+    }
+
+    public static User buatUser() {
+        return new User();
+    }
+
+    
     public String nama;
     public String email;
     public String alamat;
