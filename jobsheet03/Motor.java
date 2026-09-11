@@ -26,13 +26,15 @@ public class Motor {
     }
 
     public void setKecepatan(int kecepatan) {
-        if (!this.isMesinOn && kecepatan > 0) {
-            System.out.println("Kecepatan tidak boleh lebih dari 0 jika mesin off");
-        } 
-        else {
-            this.kecepatan = kecepatan;
-        }
+
+    if (kecepatan > 100) {
+        System.out.println("Kecepatan maksimal adalah 100!");
+    } else if (kecepatan > 0 && !isMesinOn) {
+        System.out.println("Kecepatan tidak bisa bertambah karena Mesin Off!");
+    } else {
+        this.kecepatan = kecepatan;
     }
+}
 
     public void displayStatus() {
         System.out.println("Plat Nomor: " + this.platNomor);
